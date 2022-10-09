@@ -14,7 +14,7 @@ function onFormSubmit(e) {
   ApiServer.serchQuery = e.currentTarget.elements.searchQuery.value.split(' ').join('');
 
   if (ApiServer.serchQuery === '') {
-    Notiflix.Notify.failure('please, enter text!!!');
+    Notiflix.Notify.failure('Please, enter name user!!!');
     return;
   }
 
@@ -23,11 +23,12 @@ function onFormSubmit(e) {
       const user = response.data;
       localStorage.removeItem('user');
       localStorage.setItem('key', JSON.stringify(user));
+      gallery.innerHTML = '';
+      Notiflix.Notify.success('User is added to localStorage, reload the page to see it');
     })
     .catch(error => {
       console.log('error', error);
       Notiflix.Notify.failure('Error, something went wrong');
-      gallery.innerHTML = '';
     })
     .finally(form.reset());
 }
