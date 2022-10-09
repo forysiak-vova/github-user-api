@@ -1,0 +1,24 @@
+.search-form {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: blue;
+}
+.search-input {
+  padding: 10px;
+  outline: none;
+}
+.gallery {
+  margin-top: 100px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
